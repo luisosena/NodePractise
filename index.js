@@ -1,6 +1,11 @@
 import express from 'express';
+import dotenv from 'dotenv';
+
+dotenv.config();
 const app = express();
-const PORT = 3000;
+
+const PORT = process.env.PORT || 8000;
+const MONGOURL = process.env.MONGO_URL;
 
 app.get('/', (req, res) => {
     res.send('Hello, Geeks!');
